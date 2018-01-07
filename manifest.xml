@@ -10,4 +10,5 @@
   <project name="dreadkopp/losos_reborn/fastcharge/fastchg.c" path="kernel/lge/g3/drivers/power/fastchg.c" remote="github" />
   <project name="dreadkopp/losos_reborn/init_stuff/init.g3.power.rc" path="device/lge/g3-common/rootdir/etc/init.g3.power.rc" remote="github" />
   <project name="dreadkopp/losos_reborn/kernel_config/lineageos_d855_defconfig" path="kernel/lge/g3/arch/arm/configs/lineageos_d855_defconfig" remote="github" />
+  <project name="dreadkopp/losos_reborn/bootanimation/bootanimation.zip" path="vendor/addons/prebuilt/bootanimation/bootanimation.zip" remote="github" />
 </manifest>
