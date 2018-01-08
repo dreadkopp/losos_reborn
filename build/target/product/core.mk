@@ -44,6 +44,7 @@ PRODUCT_PACKAGES += \
 		Terminal \
 		TVRemote \
 		Substratum \
+		SwiftKey \
     ManagedProvisioning \
     MtpDocumentsProvider \
     PicoTts \
