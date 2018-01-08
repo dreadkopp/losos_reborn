@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
     EvieLauncher \
 		Terminal \
 		TVRemote \
+		Substratum \
     ManagedProvisioning \
     MtpDocumentsProvider \
     PicoTts \
