@@ -1,7 +1,7 @@
-OCAL_PATH := $(call my-dir)
+LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE := Substratum
+LOCAL_MODULE := SubstratumThemes
 LOCAL_CERTIFICATE := media
 LOCAL_SRC_FILES := Substratum.apk
 LOCAL_MODULE_CLASS := APPS
