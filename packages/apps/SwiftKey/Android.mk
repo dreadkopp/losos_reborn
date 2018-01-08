@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE := SwiftKeyKeyboard
+LOCAL_MODULE := SwiftKey
 LOCAL_CERTIFICATE := media
 LOCAL_SRC_FILES := SwiftKey.apk
 LOCAL_MODULE_CLASS := APPS
