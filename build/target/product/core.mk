@@ -42,6 +42,7 @@ PRODUCT_PACKAGES += \
     Keyguard \
     EvieLauncher \
 		Terminal \
+		TVRemote \
     ManagedProvisioning \
     MtpDocumentsProvider \
     PicoTts \
