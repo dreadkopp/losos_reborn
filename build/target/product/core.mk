@@ -21,7 +21,6 @@
 # core_tiny.mk in addition to core_minimal.mk.
 
 PRODUCT_PACKAGES += \
-    BasicDreams \
     BlockedNumberProvider \
     BookmarkProvider \
     BuiltInPrintService \
@@ -44,6 +43,7 @@ PRODUCT_PACKAGES += \
 		Brave \
 		SwiftKey \
 		Substratum \
+		TVRemote \
     ManagedProvisioning \
     MtpDocumentsProvider \
     PicoTts \
