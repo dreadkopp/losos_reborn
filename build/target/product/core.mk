@@ -24,7 +24,6 @@ PRODUCT_PACKAGES += \
     BasicDreams \
     BlockedNumberProvider \
     BookmarkProvider \
-    Browser2 \
     BuiltInPrintService \
     Calendar \
     CalendarProvider \
@@ -42,7 +41,7 @@ PRODUCT_PACKAGES += \
     Keyguard \
   	Terminal \
 		EvieLauncher \
-		TVRemote \
+		Brave \
 		SwiftKey \
 		Substratum \
     ManagedProvisioning \
