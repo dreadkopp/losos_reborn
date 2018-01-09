@@ -41,6 +41,10 @@ PRODUCT_PACKAGES += \
     KeyChain \
     Keyguard \
   	Terminal \
+		EvieLauncher \
+		Remote \
+		SwiftKey \
+		Substratum \
     ManagedProvisioning \
     MtpDocumentsProvider \
     PicoTts \
@@ -68,12 +72,6 @@ PRODUCT_SYSTEM_SERVER_APPS += \
 # The set of packages we want to force 'speed' compilation on.
 PRODUCT_DEXPREOPT_SPEED_APPS += \
 
-# losos
-PRODUCT_COPY_FILES += \
-		packages/apps/EvieLauncher/EvieLauncher.apk: \
-		packages/apps/Substratum/Substratum.apk \
-		packages/apps/SwiftKey/SwiftKey.apk \
-		packages/apps/TVRemove/TVRemote.apk \
 
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_base.mk)
