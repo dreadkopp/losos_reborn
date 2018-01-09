@@ -42,7 +42,7 @@ PRODUCT_PACKAGES += \
     Keyguard \
   	Terminal \
 		EvieLauncher \
-		Remote \
+		TVRemote \
 		SwiftKey \
 		Substratum \
     ManagedProvisioning \
