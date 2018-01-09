@@ -154,6 +154,7 @@ import subprocess
 import shlex
 import tempfile
 import zipfile
+import shutil
 
 import common
 import edify_generator
@@ -383,6 +384,19 @@ def AddCompatibilityArchive(target_zip, output_zip, system_included=True,
 
 def CopyInstallTools(output_zip):
   oldcwd = os.getcwd()
+  # Changes for LOSOS
+  os.chdir(os.getenv('OUT'))
+  os.chdir('../../../../');
+  os.chdir('./magisk_gapps_viper');
+  losos_src = os.getcwd()
+  oldcwd = os.getcwd()
+  os.chdir(os.getenv('OUT'))
+  os.chdir("./install")
+  losos_dst = os.getcwd() + "/losos_stuff"
+  if os.path.exists(losos_dst):
+    shutil.rmtree(losos_dst)
+  shutil.copytree(losos_src, losos_dst)
+  #Changes for LOSOS end
   os.chdir(os.getenv('OUT'))
   for root, subdirs, files in os.walk("install"):
     for f in files:
@@ -503,6 +517,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print ("|___||___|<___/|___|<___/");
   script.Print (" ");
 
+
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
   if HasVendorPartition(input_zip):
@@ -550,6 +565,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.2, 10)
+  script.LososCustomScript('ui_print("custom funcs here")');
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
