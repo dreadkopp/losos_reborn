@@ -385,17 +385,15 @@ def AddCompatibilityArchive(target_zip, output_zip, system_included=True,
 def CopyInstallTools(output_zip):
   oldcwd = os.getcwd()
   # Changes for LOSOS
-  os.chdir(os.getenv('OUT'))
-  os.chdir('../../../../');
-  os.chdir('./magisk_gapps_viper');
-  losos_src = os.getcwd()
-  oldcwd = os.getcwd()
-  os.chdir(os.getenv('OUT'))
-  os.chdir("./install")
-  losos_dst = os.getcwd() + "/losos_stuff"
-  if os.path.exists(losos_dst):
-    shutil.rmtree(losos_dst)
-  shutil.copytree(losos_src, losos_dst)
+  print("we are here");
+  print(os.getcwd());
+  print("out dir is");
+  print(os.getenv('OUT'));
+  losos_src = os.getcwd() + "/magisk_gapps_stuff"
+  losos_dest = os.getenv('OUT') + "/install/losos_stuff"
+  if os.path.exists(losos_dest):
+    shutil.rmtree(losos_dest)
+  shutil.copytree(losos_src, losos_dest)
   #Changes for LOSOS end
   os.chdir(os.getenv('OUT'))
   for root, subdirs, files in os.walk("install"):
