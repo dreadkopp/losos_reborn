@@ -390,10 +390,15 @@ def CopyInstallTools(output_zip):
   print("out dir is");
   print(os.getenv('OUT'));
   losos_src = os.getcwd() + "/magisk_gapps_stuff"
-  losos_dest = os.getenv('OUT') + "/install/losos_stuff"
+  losos_dest = os.getenv('OUT') + "/losos_stuff"
   if os.path.exists(losos_dest):
     shutil.rmtree(losos_dest)
   shutil.copytree(losos_src, losos_dest)
+  os.chdir(os.getenv('OUT'))
+  for root, subdirs, files in os.walk("losos_stuff"):
+    for f in files:
+      p = os.path.join(root, f)
+      output_zip.write(p, p)
   #Changes for LOSOS end
   os.chdir(os.getenv('OUT'))
   for root, subdirs, files in os.walk("install"):
@@ -502,7 +507,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.UnpackPackageDir("install", "/tmp/install")
   #script.SetPermissionsRecursive("/tmp/install", 0, 0, 0755, 0644, None, None)
   #script.SetPermissionsRecursive("/tmp/install/bin", 0, 0, 0755, 0755, None, None)
-
   if OPTIONS.backuptool:
     script.Mount("/system")
     script.RunBackup("backup")
@@ -554,7 +558,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   common.ZipWriteStr(output_zip, "boot.img", boot_img.data)
 
   if OPTIONS.backuptool:
-    script.ShowProgress(0.02, 10)
+    script.ShowProgress(0.02, 7)
     script.Mount("/system")
     script.RunBackup("restore")
     script.Unmount("/system")
@@ -562,8 +566,29 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.ShowProgress(0.05, 5)
   script.WriteRawImage("/boot", "boot.img")
 
-  script.ShowProgress(0.2, 10)
-  script.LososCustomScript('ui_print("custom funcs here")');
+  script.ShowProgress(0.2, 7)
+  script.Print("Extracting Losos Stuff")
+  script.LososCustomScript('package_extract_dir("losos_stuff" , "/tmp/losos_stuff");')
+
+  script.Print("Flashing Magisk")
+  script.LososCustomScript('run_program("/sbin/busybox", "mkdir", "/tmp/losos_stuff/magisk");')
+  script.LososCustomScript('run_program("/sbin/busybox", "unzip", "/tmp/losos_stuff/magisk.zip", "META-INF/com/google/android/*", "-d", "/tmp/losos_stuff/magisk");')
+  script.LososCustomScript('run_program("/sbin/sh", "/tmp/losos_stuff/magisk/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/losos_stuff/magisk.zip");')
+
+  script.Print("Flashing Gapps")
+  script.LososCustomScript('run_program("/sbin/busybox", "mkdir", "/tmp/losos_stuff/gapps");')
+  script.LososCustomScript('run_program("/sbin/busybox", "unzip", "/tmp/losos_stuff/gapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/losos_stuff/gapps");')
+  script.LososCustomScript('run_program("/sbin/sh", "/tmp/losos_stuff/gapps/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/losos_stuff/gapps.zip");')
+ 
+  script.LososCustomScript('mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system", "");')
+  script.Print("removing unneded stuff")
+  script.LososCustomScript('run_program("/sbin/busybox","rm","-r","/system/app/crDroidWallpapers");')
+  script.LososCustomScript('run_program("/sbin/busybox","rm","-r","/system/app/Jelly");')
+  script.LososCustomScript('run_program("/sbin/busybox","rm","-r","/system/app/LatinIME");')
+  script.LososCustomScript('run_program("/sbin/busybox","rm","-r","/system/priv-app/crDroidHome");')
+  script.Print("all done! Enjoy!")
+
+
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
