@@ -569,32 +569,32 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.ShowProgress(0.2, 7)
   script.Print("Extracting Losos Stuff")
   script.LososCustomScript('package_extract_dir("losos_stuff" , "/tmp/losos_stuff");')
-
+  script.Unmount("/system")
   script.Print("Flashing Magisk")
   script.LososCustomScript('run_program("/sbin/busybox", "mkdir", "/tmp/losos_stuff/magisk");')
   script.LososCustomScript('run_program("/sbin/busybox", "unzip", "/tmp/losos_stuff/magisk.zip", "META-INF/com/google/android/*", "-d", "/tmp/losos_stuff/magisk");')
   script.LososCustomScript('run_program("/sbin/sh", "/tmp/losos_stuff/magisk/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/losos_stuff/magisk.zip");')
-
+  script.Unmount("/system")
   script.Print("Adding Viper4Android")
   script.LososCustomScript('run_program("/sbin/busybox", "mkdir", "/tmp/losos_stuff/Viper");')
   script.LososCustomScript('run_program("/sbin/busybox", "unzip", "/tmp/losos_stuff/Viper.zip", "META-INF/com/google/android/*", "-d", "/tmp/losos_stuff/Viper");')
   script.LososCustomScript('run_program("/sbin/sh", "/tmp/losos_stuff/Viper/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/losos_stuff/Viper.zip");')
-
+  script.Unmount("/system")
   script.Print("Enabling Sony Apps")
   script.LososCustomScript('run_program("/sbin/busybox", "mkdir", "/tmp/losos_stuff/SonyFW");')
   script.LososCustomScript('run_program("/sbin/busybox", "unzip", "/tmp/losos_stuff/SonyFW.zip", "META-INF/com/google/android/*", "-d", "/tmp/losos_stuff/SonyFW");')
   script.LososCustomScript('run_program("/sbin/sh", "/tmp/losos_stuff/SonyFW/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/losos_stuff/SonyFW.zip");')
-
+  script.Unmount("/system")
   script.Print("Enabling VoLTE")
   script.LososCustomScript('run_program("/sbin/busybox", "mkdir", "/tmp/losos_stuff/VoLTE");')
   script.LososCustomScript('run_program("/sbin/busybox", "unzip", "/tmp/losos_stuff/VoLTE.zip", "META-INF/com/google/android/*", "-d", "/tmp/losos_stuff/VoLTE");')
   script.LososCustomScript('run_program("/sbin/sh", "/tmp/losos_stuff/VoLTE/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/losos_stuff/VoLTE.zip");')
-
+  script.Unmount("/system")
   script.Print("Flashing Gapps")
   script.LososCustomScript('run_program("/sbin/busybox", "mkdir", "/tmp/losos_stuff/gapps");')
   script.LososCustomScript('run_program("/sbin/busybox", "unzip", "/tmp/losos_stuff/gapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/losos_stuff/gapps");')
   script.LososCustomScript('run_program("/sbin/sh", "/tmp/losos_stuff/gapps/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/losos_stuff/gapps.zip");')
- 
+  script.Unmount("/system")
   script.LososCustomScript('mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system", "");')
   script.Print("removing unneded stuff")
   script.LososCustomScript('run_program("/sbin/busybox","rm","-r","/system/app/crDroidWallpapers");')
