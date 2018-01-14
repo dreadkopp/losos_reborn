@@ -32,25 +32,23 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "zzmoove"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "zzmoove"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "zzmoove"
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 2880000
-    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 40000
-    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "20000 1400000:40000 1700000:20000"
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1500000:90 1800000:70"
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 30000
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
-    write /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor 100000
-    write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_load 50
-    write /sys/devices/system/cpu/cpufreq/interactive/sync_freq 1036800
-    write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_freq 1190400
 
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 268800
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 268800
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 268800
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 268800
+
     chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
+    echo 2880000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    echo 2880000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+    echo 2880000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+    echo 2880000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+
+    chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+    chown system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+    chown system /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
 
     base_voltages=(800 810 820 830 840 850 850 850 870 880 910 920 950 970 1050 1070 1120 1150 1200)
 
@@ -66,8 +64,10 @@ on enable-low-power
         voltages_corrected="$voltages_corrected $i"
     done
 
-    write /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table $voltages_corrected
+    echo $voltages_corrected > /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
+    echo '75' > /sys/module/msm_thermal/parameters/limit_temp_degC
     chown system /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
+    chown system /sys/module/msm_thermal/parameters/limit_temp_degC
     chown system /sys/kernel/msm_limiter/resume_max_freq
     chown root.system /sys/devices/system/cpu/cpu1/online
     chown root.system /sys/devices/system/cpu/cpu2/online
