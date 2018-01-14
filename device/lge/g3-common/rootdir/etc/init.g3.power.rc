@@ -50,13 +50,13 @@ on enable-low-power
     chown system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chown system /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
 
-    base_voltages=(800 810 820 830 840 850 850 850 870 880 910 920 950 970 1050 1070 1120 1150 1200)
+    base_voltages=(800 810 820 830 840 850 850 850 870 880 910 920 950 970 1050 1070 1120 1200 1250)
 
     psv=$(cat /sys/devices/system/soc/soc0/pvs_bin)
 
     voltages_corrected=""
 
-    ITER=38
+    ITER=36
 
     for i in "${base_voltages[@]}"; do
         let ITER=${ITER}-2
