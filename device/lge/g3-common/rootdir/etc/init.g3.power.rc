@@ -50,7 +50,7 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 268800
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 268800
     chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-    write /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table "710 715 715 715 715 725 735 745 765 775 805 815 840 885 945 980 1035 1065 1150"
+    write /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table "720 725 725 725 725 745 755 745 785 795 825 835 860 905 965 1000 1055 1085 1150"
     chown system /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
     chown system /sys/kernel/msm_limiter/resume_max_freq
     chown root.system /sys/devices/system/cpu/cpu1/online
