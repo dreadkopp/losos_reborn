@@ -50,7 +50,23 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 268800
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 268800
     chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-    write /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table "720 725 725 725 725 745 755 745 785 795 825 835 860 905 965 1000 1055 1085 1150"
+
+
+    base_voltages=(800 810 820 830 840 850 850 850 870 880 910 920 950 970 1050 1070 1120 1150 1200)
+
+    psv=$(cat /sys/devices/system/soc/soc0/pvs_bin)
+
+    voltages_corrected=""
+
+    ITER=38
+
+    for i in "${base_voltages[@]}"; do
+        let ITER=${ITER}-2
+        i=$(( $i - $(( $psv * 7)) - $ITER ));
+        voltages_corrected="$voltages_corrected $i"
+    done
+
+    write /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table $voltages_corrected
     chown system /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
     chown system /sys/kernel/msm_limiter/resume_max_freq
     chown root.system /sys/devices/system/cpu/cpu1/online
