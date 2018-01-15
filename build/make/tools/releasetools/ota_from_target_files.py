@@ -583,7 +583,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   script.Print("Enabling Sony Apps")
   script.Mount("/system")
-  script.LososCustomScript('package_extract_dir("losos_stuff/SonyFW/system" , "/system")')
+  script.LososCustomScript('package_extract_dir("losos_stuff/SonyFW/system" , "/system");')
   script.Unmount("/system")
 
   script.Print("Flashing Gapps")
