@@ -549,15 +549,35 @@ on property:sys.boot_completed=1
 
     #apply OC
 
-    echo 2880000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    echo 2880000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
-    echo 2880000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-    echo 2880000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+    core0=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq)
+    while [ $core0 != 2880000 ] ; do
+      echo 2880000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+      chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+      core0=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq)
+    done
+    echo "core0 set"
+    core1=$(cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq)
+    while [ $core1 != 2880000 ] ; do
+      echo 2880000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+      chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+      core1=$(cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq)
+    done
+    echo "core1 set"
+    core2=$(cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq)
+    while [ $core2 != 2880000 ] ; do
+      echo 2880000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+      chown system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+      core2=$(cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq)
+    done
+    echo "core2 set"
+    core3=$(cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq)
+    while [ $core3 != 2880000 ] ; do
+      echo 2880000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+      chown system /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+      core3=$(cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq)
+    done
+    echo "core3 set"
 
-    chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
-    chown system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-    chown system /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
 
     #continue normal business
 
