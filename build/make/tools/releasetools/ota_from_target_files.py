@@ -581,9 +581,9 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.LososCustomScript('run_program("/sbin/busybox", "unzip", "/tmp/losos_stuff/Viper.zip", "META-INF/com/google/android/*", "-d", "/tmp/losos_stuff/Viper");')
   script.LososCustomScript('run_program("/sbin/sh", "/tmp/losos_stuff/Viper/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/losos_stuff/Viper.zip");')
 
-  script.Print("Enabling Sony Apps")
+  script.Print("Adding more tasty ingredients")
   script.Mount("/system")
-  script.LososCustomScript('package_extract_dir("losos_stuff/SonyFW/system" , "/system");')
+  script.LososCustomScript('package_extract_dir("losos_stuff/Additions/system" , "/system");')
   script.Unmount("/system")
 
   script.Print("Flashing Gapps")
