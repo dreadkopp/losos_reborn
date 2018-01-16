@@ -518,7 +518,7 @@ service sensors /system/vendor/bin/sensors.qcom
     group root
     disabled
 
-service losos-voltages-sh /sbin/vendor/bin/sh /init.voltages.sh
+service losos-voltages-sh /system/vendor/bin/sh /init.voltages.sh
     class core
     user root
     oneshot
