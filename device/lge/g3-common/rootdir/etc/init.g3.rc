@@ -518,6 +518,11 @@ service sensors /system/vendor/bin/sensors.qcom
     group root
     disabled
 
+service losos-voltages-sh /sbin/vendor/bin/sh /init.voltages.sh
+    class core
+    user root
+    oneshot
+
 on property:bluetooth.isEnabled=true
     write /sys/class/bluetooth/hci0/idle_timeout 7000
 
@@ -552,33 +557,21 @@ on property:sys.boot_completed=1
 
     # try OC settings here
 
-    echo 0 > /sys/module/msm_thermal/core_control/enabled
-    echo 1 > /sys/devices/system/cpu/cpu1/online
-    echo 1 > /sys/devices/system/cpu/cpu2/online
-    echo 1 > /sys/devices/system/cpu/cpu3/online
+    write  /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
 
-    echo 2726400 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    echo 2726400 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
-    echo 2726400 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
-    echo 2726400 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2726400
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 2726400
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2726400
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 2726400
 
-    base_voltages=(800 810 820 820 820 820 830 830 850 875 880 900 940 980 1040 1070 1120 1160 1200)
+    start losos-voltages-sh
 
-    psv=$(cat /sys/devices/system/soc/soc0/pvs_bin)
+    chown system /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
 
-    voltages_corrected=""
-
-    ITER=36
-
-    for i in "${base_voltages[@]}"; do
-        let ITER=${ITER}-2
-        i=$(( $i - $(( $psv * 8)) - $ITER ));
-        voltages_corrected="$voltages_corrected $i"
-    done
-
-    echo $voltages_corrected > /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
-
-    echo 1 > /sys/module/msm_thermal/core_control/enabled
+    write /sys/module/msm_thermal/core_control/enabled 1
 
 
     start baseband-sh
