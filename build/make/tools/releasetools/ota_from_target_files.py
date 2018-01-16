@@ -599,7 +599,9 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.LososCustomScript('run_program("/sbin/busybox","rm","-r","/system/priv-app/crDroidHome");')
   script.LososCustomScript('run_program("/sbin/busybox","rm","-r","/system/priv-app/AudioFX");')
   script.LososCustomScript('run_program("/sbin/busybox","rm","-r","/system/app/crDroidMusic");')
-  
+  script.LososCustomScript('run_program("/sbin/busybox","rm","-r","/system/app/DeskClock");')
+
+
 
   script.Print("all done! Enjoy!")
 
