@@ -31,7 +31,6 @@ PRODUCT_PACKAGES += \
     Contacts \
 		CarrierConfig \
     DocumentsUI \
-    DeskClock \
     DownloadProviderUi \
     Email \
     ExactCalculator \
@@ -46,6 +45,10 @@ PRODUCT_PACKAGES += \
 		SwiftKey \
 		Substratum \
 		TVRemote \
+		Clock \
+		ClockWidget \
+		Music \
+		Weather \
     ManagedProvisioning \
     MtpDocumentsProvider \
     PicoTts \
