@@ -1,0 +1,343 @@
+2018-01-16T13:23:31+01:00
+add the voltage script to initramfs as well
+
+
+2018-01-16T07:00:06+01:00
+add inti.voltages.sh to manifest
+
+
+2018-01-16T06:11:24+01:00
+remove again, since somehow it is packed to it
+
+
+2018-01-16T06:04:38+01:00
+fixed typo
+
+
+2018-01-16T04:59:16+01:00
+tidy up
+
+
+2018-01-16T04:55:47+01:00
+init scripts hopefully fixed
+
+
+2018-01-16T04:39:00+01:00
+...and added the Android.mks
+
+
+2018-01-16T04:36:50+01:00
+added a few more apps
+
+
+2018-01-16T03:28:57+01:00
+Swiftkey -> Xperia Keyboard
+
+
+2018-01-16T03:13:11+01:00
+lower voltage a bit more
+
+
+2018-01-16T03:12:37+01:00
+2,7 Ghz should be doable by all devices
+
+
+2018-01-16T02:50:45+01:00
+write -> echo so we can call this part from adb shell as well
+
+
+2018-01-16T01:39:00+01:00
+new location for OC script and new default wallpaper
+
+
+2018-01-16T00:12:00+01:00
+apply OC again (maybe)
+
+
+2018-01-15T23:37:04+01:00
+moved up to younger branches
+
+
+2018-01-15T17:40:58+01:00
+Use 64-bit binder API
+
+
+2018-01-15T05:43:35+01:00
+set 2.8Ghz in governor
+
+
+2018-01-15T05:34:15+01:00
+apply OC here wont help either
+
+
+2018-01-15T05:07:39+01:00
+loop so we don't miss our shot on OC
+
+
+2018-01-15T04:16:59+01:00
+switched thermal-engine for working one + moved OC to @boot_completed
+
+
+2018-01-15T03:38:33+01:00
+add all juicy stuff to the repo (-magisk & magisk)
+
+
+2018-01-15T03:13:41+01:00
+enable thermal engine
+
+
+2018-01-15T03:12:40+01:00
+renamed SonyFW folder since this just became more important
+
+
+2018-01-15T02:06:45+01:00
+typo
+
+
+2018-01-14T23:38:45+01:00
+workaround for failing zips
+
+
+2018-01-14T22:31:54+01:00
+extract all the stuff again and again so no zip can mess it up
+
+
+2018-01-14T22:02:15+01:00
+unomunt /system between stages to ease the waves a bit
+
+
+2018-01-14T20:15:15+01:00
+discard msm_thermal, refine voltages
+
+
+2018-01-14T18:48:35+01:00
+a bit more voltage on high freqs please
+
+
+2018-01-14T18:30:31+01:00
+deleted obsolete lines + added 2.8Ghz OC
+
+
+2018-01-14T17:44:06+01:00
+refined voltages based on PVS Grade
+
+
+2018-01-14T17:43:49+01:00
+added Viper,VoLTE,SonyFW
+
+
+2018-01-14T01:59:26+01:00
+revert to 8.0 on devices and bump up voltages a bit
+
+
+2018-01-14T00:41:41+01:00
+git tells me there where changes haha
+
+
+2018-01-13T02:05:19+01:00
+too much
+
+
+2018-01-13T01:52:26+01:00
+symlinks horray
+
+
+2018-01-12T20:39:05+01:00
+don't exit on warning
+
+
+2018-01-12T14:33:16+01:00
+fixed updater script
+
+
+2018-01-11T20:36:13+01:00
+copy zips from magisk_install_stuff dir to 'install' dir
+
+
+2018-01-11T18:37:17+01:00
+fix deprecated kernel message (dirty)
+
+
+2018-01-09T19:04:15+01:00
+messes with building script again
+
+
+2018-01-09T14:25:10+01:00
+added custom function to manipulate updater_script to streamline Gapps + Magisk + Viper
+
+
+2018-01-09T14:07:35+01:00
+...uhm i should have actually added a file i guess
+
+
+2018-01-09T14:05:35+01:00
+crdroid is now LOSOS ;)
+
+
+2018-01-09T12:17:37+01:00
+added remote again (anymote switched for xiaomi mi remote)
+
+
+2018-01-09T02:52:21+01:00
+removed remote, removed Gello, added Brave
+
+
+2018-01-09T01:49:50+01:00
+fixed typo
+
+
+2018-01-09T01:47:37+01:00
+hope those apks stay intact this time
+
+
+2018-01-09T01:43:28+01:00
+problem where broken apks ... /:
+
+
+2018-01-09T01:00:50+01:00
+cleanup Android.mks
+
+
+2018-01-09T00:59:27+01:00
+second attempt on custom apps
+
+
+2018-01-09T00:22:24+01:00
+revert .
+
+
+2018-01-09T00:16:37+01:00
+typo and module name fixups
+
+
+2018-01-08T23:29:56+01:00
+added Swiftkey
+
+
+2018-01-08T23:19:19+01:00
+added Substratum
+
+
+2018-01-08T23:06:23+01:00
+added TVRemote from losos 14.1
+
+
+2018-01-08T23:00:53+01:00
+switched Launcher for EVIE and market d850 kernel dirty as well
+
+
+2018-01-08T22:25:25+01:00
+typo
+
+
+2018-01-08T21:57:42+01:00
+added d850
+
+
+2018-01-08T18:19:10+01:00
+lge_g3_common switch brnach from 8.1 -> 8.1-bu1
+
+
+2018-01-08T17:33:26+01:00
+back to 8.1
+
+
+2018-01-08T13:51:44+01:00
+typo
+
+
+2018-01-08T13:51:09+01:00
+going to direct lineagextd kernel
+
+
+2018-01-08T10:10:59+01:00
+...
+
+
+2018-01-08T01:25:41+01:00
+...
+
+
+2018-01-08T00:26:27+01:00
+applying it to ./ breaks too much
+
+
+2018-01-07T23:20:05+01:00
+sensors work hopefully
+
+
+2018-01-07T23:02:05+01:00
+wasd
+
+
+2018-01-07T19:57:40+01:00
+..
+
+
+2018-01-07T19:52:45+01:00
+mark kernel dirty
+
+
+2018-01-07T19:52:03+01:00
+added vs985
+
+
+2018-01-07T16:39:37+01:00
+revision specified
+
+
+2018-01-07T16:32:25+01:00
+dupe
+
+
+2018-01-07T16:31:13+01:00
+switched to staging/linage-15.1 for qcom_common
+
+
+2018-01-07T15:55:59+01:00
+removed Readme and added gitignore
+
+
+2018-01-07T15:33:32+01:00
+no flipflap anymore
+
+
+2018-01-07T15:29:22+01:00
+moved manifest to .repo/local_manifests/roomservice.xml
+
+
+2018-01-07T15:24:44+01:00
+seems to work a-okay :)
+
+
+2018-01-07T15:19:48+01:00
+updated manifest... might actually work this way haha
+
+
+2018-01-07T14:58:39+01:00
+change folder / file structure and edited manifest.xml
+
+
+2018-01-07T14:42:17+01:00
+added bootanimation
+
+
+2018-01-07T14:37:39+01:00
+modified manifest to use my sources
+
+
+2018-01-07T14:32:39+01:00
+added manifest
+
+
+2018-01-07T14:31:44+01:00
+frist babysteps
+
+
+2018-01-07T14:30:34+01:00
+?
+
+
+2018-01-07T14:23:23+01:00
+init
+
