@@ -14,14 +14,31 @@ for i in "${base_voltages[@]}"; do
 done
 
 #if standard break here
-echo $voltages_corrected > /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
 
+
+
+
+if grep -Fxq "undervolt" /sdcard/Losos/settings.conf
+then
+  echo $voltages_corrected > /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
+fi
+
+
+#default clock
+
+MAX_FREQ=2457600
 
 # apply OC settings here
-
-MAX_FREQ=2726400
+if grep -Fxq "overclock" /sdcard/Losos/settings.conf
+then
+  MAX_FREQ=2726400
+fi
 
 #if powersave set MAX_FREQ to 1,5Ghz
+if grep -Fxq "powersave" /sdcard/Losos/settings.conf
+then
+  MAX_FREQ=1497600
+fi
 
 echo 0 > /sys/module/msm_thermal/core_control/enabled
 echo 1 > /sys/devices/system/cpu/cpu1/online
