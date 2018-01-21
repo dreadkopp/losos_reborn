@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="crdroid-devices/android_device_lge_d855" path="device/lge/d855" remote="github" revision="8.1-bu2" />
+  <project name="crdroid-devices/android_device_lge_d855" path="device/lge/d855" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_lge_vs985" path="device/lge/vs985" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_lge_d850" path="device/lge/d850" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_lge_d851" path="device/lge/d851" remote="github" revision="8.1" />
@@ -56,7 +56,7 @@ remote="aosp" />
 remote="aosp" />
   <remove-project path="packages/apps/Car/UserManagement" name="platform/packages/apps/Car/UserManagement" groups="pdk-fs"
 remote="aosp" />
-  <remove-project name="crdroidandroid/android_system_sepolicy" />
-  <project name="Oreo-onyx/system_sepolicy" path="system/sepolicy" remote="github" revision="o-mr1" />
+
+ <project path="BaconSE" name="Fabulous-Oreo/device_qcom_sepolicy" remote="github" revision="oreo-mr1" />
 
 </manifest>
