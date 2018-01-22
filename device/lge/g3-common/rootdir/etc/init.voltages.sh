@@ -13,6 +13,10 @@ for i in "${base_voltages[@]}"; do
     voltages_corrected="$voltages_corrected $i"
 done
 
+while [ ! -f /sdcard/Losos/settings.conf ]; do
+        sleep 1
+done
+
 if grep -Fxq "undervolt" /sdcard/Losos/settings.conf
 then
   echo $voltages_corrected > /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
