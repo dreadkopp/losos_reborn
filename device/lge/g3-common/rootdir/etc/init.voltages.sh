@@ -9,14 +9,9 @@ ITER=36
 
 for i in "${base_voltages[@]}"; do
     let ITER=${ITER}-2
-    i=$(( $i - $(( $psv * 8)) - $ITER ));
+    i=$(( $i - $(( $psv * 5)) - $ITER ));
     voltages_corrected="$voltages_corrected $i"
 done
-
-#if standard break here
-
-
-
 
 if grep -Fxq "undervolt" /sdcard/Losos/settings.conf
 then
