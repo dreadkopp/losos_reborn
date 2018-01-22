@@ -19,7 +19,8 @@
   <remove-project groups="pdk" name="device/generic/goldfish" path="device/generic/goldfish" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/goldfish-opengl" path="device/generic/goldfish-opengl" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/mini-emulator-arm64" path="device/generic/mini-emulator-arm64" remote="aosp" />
-  <remove-project groups="pdk" name="device/generic/mini-emulator-armv7-a-neon" path="device/generic/mini-emulator-armv7-a-neon" remote="aosp" />
+  <remove-project groups="pdk" name="device/generic/mini-emulator-armv7-a-neon" path="device/generic/mini-emulator-armv7-a-neon" 
+remote="aosp" />
   <remove-project groups="pdk" name="device/generic/mini-emulator-x86" path="device/generic/mini-emulator-x86" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/mini-emulator-x86_64" path="device/generic/mini-emulator-x86_64" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/qemu" path="device/generic/qemu" remote="aosp" />
@@ -33,7 +34,8 @@
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/Hvac" path="packages/apps/Car/Hvac" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/LatinIME" path="packages/apps/Car/LatinIME" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/LensPicker" path="packages/apps/Car/LensPicker" remote="aosp" />
-  <remove-project groups="pdk-fs" name="platform/packages/apps/Car/LocalMediaPlayer" path="packages/apps/Car/LocalMediaPlayer" remote="aosp" />
+  <remove-project groups="pdk-fs" name="platform/packages/apps/Car/LocalMediaPlayer" path="packages/apps/Car/LocalMediaPlayer" remote="aosp" 
+/>
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/Media" path="packages/apps/Car/Media" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/Messenger" path="packages/apps/Car/Messenger" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/Overview" path="packages/apps/Car/Overview" remote="aosp" />
@@ -49,3 +51,4 @@
   <remove-project name="crdroidandroid/android_frameworks_av" path="frameworks/av" />
   <project name="LineageOS/android_frameworks_av" path="frameworks/av" remote="github" revision="staging/lineage-15.1" />
 </manifest>
+
