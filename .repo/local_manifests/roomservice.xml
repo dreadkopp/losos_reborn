@@ -48,4 +48,6 @@
   <project name="xiaomi-note-dev/android_device_xiaomi_virgo-old" path="only-for-libshim" remote="github" revision="lineage-15.1" />
   <remove-project name="crdroidandroid/android_frameworks_av" path="frameworks/av" />
   <project name="LineageOS/android_frameworks_av" path="frameworks/av" remote="github" revision="staging/lineage-15.1" />
+  <remove-project path="hardware/qcom/camera" name="LineageOS/android_hardware_qcom_camera" />
+  <project name="Fabulous-Oreo/hardware_qcom_camera" path="hardware/qcom/camera" remote="github" revision="oreo-mr1" />
 </manifest>
