@@ -60,6 +60,4 @@ remote="aosp" />
   <remove-project path="packages/apps/Car/UserManagement" name="platform/packages/apps/Car/UserManagement" groups="pdk-fs"
 remote="aosp" />
 
- <project path="BaconSE" name="Fabulous-Oreo/device_qcom_sepolicy" remote="github" revision="oreo-mr1" />
-
 </manifest>
