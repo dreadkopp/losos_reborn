@@ -16,6 +16,7 @@ on early-init
 
 on init
     export LD_SHIM_LIBS /system/vendor/lib/libmmcamera2_stats_algorithm.so|libshim_atomic.so:/system/vendor/lib/hw/camera.vendor.msm8974.so|libshim_atomic.so
+    export LD_PRELOAD libshim_atomic.so
 
     mkdir /persist 0771 system system
     mkdir /persist-lg 0771 system system
