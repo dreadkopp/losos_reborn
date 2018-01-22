@@ -62,12 +62,12 @@ BOARD_USES_ALSA_AUDIO := true
 BOARD_HAVE_BLUETOOTH := true
 
 # Camera
-TARGET_USE_COMPAT_GRALLOC_ALIGN := true
-USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_USE_VENDOR_CAMERA_EXT := true
+#TARGET_USE_COMPAT_GRALLOC_ALIGN := true
+#USE_DEVICE_SPECIFIC_CAMERA := true
+#TARGET_USE_VENDOR_CAMERA_EXT := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
-#USE_DEVICE_SPECIFIC_CAMERA := true
+USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
@@ -133,14 +133,14 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USE_SDCLANG := true
 
 # SELinux
-#include device/qcom/sepolicy/legacy-sepolicy.mk
-#include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += device/lge/g3-common/sepolicy
+include device/qcom/sepolicy/legacy-sepolicy.mk
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/lge/g3-common/sepolicy
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Sepolicy
-include BaconSE/sepolicy.mk
-BOARD_SEPOLICY_DIRS += \
-    $(PLATFORM_PATH)/sepolicy
+#include BaconSE/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += \
+#    $(PLATFORM_PATH)/sepolicy
