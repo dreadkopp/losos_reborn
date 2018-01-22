@@ -45,4 +45,7 @@
   <remove-project name="LineageOS/android_device_qcom_sepolicy" path="device/qcom/sepolicy" />
   <project name="Fabulous-Oreo/device_qcom_sepolicy" path="device/qcom/sepolicy" remote="github" revision="oreo-mr1" />
   <project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" remote="github" />
+  <project name="xiaomi-note-dev/android_device_xiaomi_virgo-old" path="only-for-libshim" remote="github" revision="lineage-15.1" />
+  <remove-project name="crdroidandroid/android_frameworks_av" path="frameworks/av" />
+  <project name="LineageOS/android_frameworks_av" path="frameworks/av" remote="github" revision="staging/lineage-15.1" />
 </manifest>
