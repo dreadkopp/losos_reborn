@@ -7,7 +7,7 @@
   <project name="crdroid-devices/android_device_lge_d852" path="device/lge/d852" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_lge_f400" path="device/lge/f400" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_lge_ls990" path="device/lge/ls990" remote="github" revision="8.1" />
-  <project name="crdroid-devices/android_device_lge_g3-common" path="device/lge/g3-common" remote="github" revision="8.1-bu2" />
+  <project name="crdroid-devices/android_device_lge_g3-common" path="device/lge/g3-common" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_qcom_common" path="device/qcom/common" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_kernel_lge_g3" path="kernel/lge/g3" remote="github" revision="8.1" />
   <project name="crdroid-devices/proprietary_vendor_lge" path="vendor/lge" remote="github" revision="8.1" />

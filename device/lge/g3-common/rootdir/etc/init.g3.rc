@@ -329,22 +329,30 @@ on post-fs-data
 # Services start here
 #
 
-service losos-voltages-sh /system/vendor/bin/sh /init.voltages.sh
+service charger /sbin/charger
+    class charger
+    critical
+    seclabel u:r:charger:s0
+
+service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     class core
     user root
     oneshot
 
-service charger /sbin/healthd -c
-    class charger
-    critical
-    seclabel u:r:healthd:s0
+service qcom-c_main-sh /system/bin/sh /init.class_main.sh
+    class main
+    user root
+    oneshot
 
-service baseband-sh /system/bin/sh /init.baseband.sh
+service baseband-sh /vendor/bin/sh /vendor/bin/init.baseband.sh
     class late_start
     user root
-    seclabel u:r:qti_init_shell_exec:s0
+    seclabel u:r:qti_init_shell:s0
     oneshot
     disabled
+
+on property:vold.decrypt=trigger_restart_framework
+    start qcom-c_main-sh
 
 service hwaddrs /vendor/bin/hwaddrs
     class core
@@ -352,17 +360,17 @@ service hwaddrs /vendor/bin/hwaddrs
     group bluetooth wifi
     oneshot
 
-service btinit-sh /system/bin/sh /init.qcom.bt.sh
+service btinit-sh /vendor/bin/sh /vendor/bin/init.qcom.bt.sh
     class core
     user root
-    seclabel u:r:qti_init_shell_exec:s0
+    seclabel u:r:qti_init_shell:s0
     oneshot
     disabled
 
-service cal_sensors-sh /vendor/bin/sh /init.sensors.sh
+service cal_sensors-sh /vendor/bin/sh /vendor/bin/init.sensors.sh
     class core
     user root
-    seclabel u:r:qti_init_shell_exec:s0
+    seclabel u:r:qti_init_shell:s0
     oneshot
 
 # Running hwaddrs under init is enforcing 0600, we need more
@@ -375,6 +383,18 @@ on property:bluetooth.hciattach=true
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
+
+service ril-daemon2 /vendor/bin/hw/rild -c 2
+    class main
+    user radio
+    group radio cache inet misc audio log readproc wakelock oem_2901
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+
+service ril-daemon3 /vendor/bin/hw/rild -c 3
+    class main
+    user radio
+    group radio cache inet misc audio log readproc wakelock oem_2901
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 # --> init.target.rc <--
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
@@ -466,18 +486,18 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 
 # --> init.msm8974_core.rc <--
 
-service lge-sensor-sh /system/bin/sh /init.msm8974.sensor.sh
+service lge-sensor-sh /vendor/bin/sh /vendor/bin/init.msm8974.sensor.sh
     class core
     user root
-    seclabel u:r:qti_init_shell_exec:s0
+    seclabel u:r:qti_init_shell:s0
     oneshot
 
 # --> init.qcom.rc <--
 
-service qcom-sh /system/bin/sh /init.qcom.sh
+service qcom-sh /vendor/bin/sh /vendor/bin/init.qcom.sh
     class late_start
     user root
-    seclabel u:r:qti_init_shell_exec:s0
+    seclabel u:r:qti_init_shell:s0
     oneshot
 
 service qmuxd /vendor/bin/qmuxd
@@ -495,6 +515,11 @@ service sensors /vendor/bin/sensors.qcom
     user root
     group root
     disabled
+
+service losos-voltages-sh /vendor/bin/sh /init.voltages.sh
+    class core
+    user root
+    oneshot
 
 on property:bluetooth.isEnabled=true
     write /sys/class/bluetooth/hci0/idle_timeout 7000
@@ -526,5 +551,5 @@ on property:sys.boot_completed=1
     write /sys/module/lowmemorykiller/parameters/minfree "14746,18432,22118,25805,33038,41988"
 
     start losos-voltages-sh
-    
+
     start baseband-sh
