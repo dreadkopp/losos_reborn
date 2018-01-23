@@ -26,6 +26,7 @@ fi
 #default clock
 
 MAX_FREQ=2457600
+GOV="zzmoove"
 
 # apply OC settings here
 if grep -Fxq "overclock" /sdcard/Losos/settings.conf
@@ -37,27 +38,22 @@ fi
 if grep -Fxq "powersave" /sdcard/Losos/settings.conf
 then
   MAX_FREQ=1497600
+  GOV="powersave"
 fi
 
 echo 0 > /sys/module/msm_thermal/core_control/enabled
-echo 1 > /sys/devices/system/cpu/cpu1/online
-echo 1 > /sys/devices/system/cpu/cpu2/online
-echo 1 > /sys/devices/system/cpu/cpu3/online
 
 echo $MAX_FREQ > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+echo $GOV > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo 1 > /sys/devices/system/cpu/cpu1/online
 echo $MAX_FREQ > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+echo $GOV > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+echo 1 > /sys/devices/system/cpu/cpu2/online
 echo $MAX_FREQ > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+echo $GOV > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+echo 1 > /sys/devices/system/cpu/cpu3/online
 echo $MAX_FREQ > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
-
+echo $GOV > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
 #apply input_boost_freq
 
 echo 1036800 > /sys/module/cpu_boost/parameters/input_boost_freq
-
-
-#set governor
-
-echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-echo "zzmoove" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-echo "zzmoove" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-echo "zzmoove" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
-
