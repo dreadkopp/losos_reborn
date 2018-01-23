@@ -252,3 +252,10 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
+
+
+#losos tests
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    camera.disable_zsl_mode=1 \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
