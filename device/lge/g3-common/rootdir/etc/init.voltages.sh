@@ -13,8 +13,12 @@ for i in "${base_voltages[@]}"; do
     voltages_corrected="$voltages_corrected $i"
 done
 
-while [ ! -f /sdcard/Losos/settings.conf ]; do
+BAILOUT=120
+
+#wait for /sdcard to get mounted. Bail out if file not exists after 2 mins 
+while [ ! -f /sdcard/Losos/settings.conf ] && [ $BAILOUT -lt 0 ]; do
         sleep 1
+        let BAILOUT=$BAILOUT-1
 done
 
 if grep -Fxq "undervolt" /sdcard/Losos/settings.conf
