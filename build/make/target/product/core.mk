@@ -49,6 +49,7 @@ PRODUCT_PACKAGES += \
 		ClockWidget \
 		Music \
 		Weather \
+		LososConfigurator \
     ManagedProvisioning \
     MtpDocumentsProvider \
     PicoTts \
