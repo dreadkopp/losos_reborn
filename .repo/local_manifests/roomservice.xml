@@ -11,7 +11,6 @@
   <project name="crdroid-devices/android_device_qcom_common" path="device/qcom/common" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_kernel_lge_g3" path="kernel/lge/g3" remote="github" revision="8.1" />
   <project name="crdroid-devices/proprietary_vendor_lge" path="vendor/lge" remote="github" revision="8.1" />
-  <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <project name="dreadkopp/losos_reborn" path="losos" remote="github" revision="master" />
   <remove-project groups="pdk" name="device/generic/arm64" path="device/generic/arm64" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/armv7-a-neon" path="device/generic/armv7-a-neon" remote="aosp" />
@@ -19,8 +18,7 @@
   <remove-project groups="pdk" name="device/generic/goldfish" path="device/generic/goldfish" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/goldfish-opengl" path="device/generic/goldfish-opengl" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/mini-emulator-arm64" path="device/generic/mini-emulator-arm64" remote="aosp" />
-  <remove-project groups="pdk" name="device/generic/mini-emulator-armv7-a-neon" path="device/generic/mini-emulator-armv7-a-neon" 
-remote="aosp" />
+  <remove-project groups="pdk" name="device/generic/mini-emulator-armv7-a-neon" path="device/generic/mini-emulator-armv7-a-neon" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/mini-emulator-x86" path="device/generic/mini-emulator-x86" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/mini-emulator-x86_64" path="device/generic/mini-emulator-x86_64" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/qemu" path="device/generic/qemu" remote="aosp" />
@@ -34,8 +32,7 @@ remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/Hvac" path="packages/apps/Car/Hvac" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/LatinIME" path="packages/apps/Car/LatinIME" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/LensPicker" path="packages/apps/Car/LensPicker" remote="aosp" />
-  <remove-project groups="pdk-fs" name="platform/packages/apps/Car/LocalMediaPlayer" path="packages/apps/Car/LocalMediaPlayer" remote="aosp" 
-/>
+  <remove-project groups="pdk-fs" name="platform/packages/apps/Car/LocalMediaPlayer" path="packages/apps/Car/LocalMediaPlayer" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/Media" path="packages/apps/Car/Media" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/Messenger" path="packages/apps/Car/Messenger" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/Overview" path="packages/apps/Car/Overview" remote="aosp" />
@@ -46,10 +43,11 @@ remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/UserManagement" path="packages/apps/Car/UserManagement" remote="aosp" />
   <remove-project name="LineageOS/android_device_qcom_sepolicy" path="device/qcom/sepolicy" />
   <project name="Fabulous-Oreo/device_qcom_sepolicy" path="device/qcom/sepolicy" remote="github" revision="oreo-mr1" />
-  <project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" remote="github" />
-  <project name="xiaomi-note-dev/android_device_xiaomi_virgo-old" path="only-for-libshim" remote="github" revision="lineage-15.1" />
-  <remove-project name="crdroidandroid/android_frameworks_av" path="frameworks/av" />
-<!--  <project name="LineageOS/android_frameworks_av" path="frameworks/av" remote="github" revision="staging/lineage-15.1" /> -->
+  <remove-project name="LineageOS/android_frameworks_av" path="frameworks/av" />
   <project name="dreadkopp/oreo-frameworks-av" path="frameworks/av" remote="github" revision="master" />
-
+  <project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" remote="github" />
+  <remove-project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" />
+  <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
+  <project path="packages/apps/crDroidSettings" name="crdroidandroid/android_packages_apps_crDroidSettings" remote="github" revision="8.1" />
+  <remove-project path="packages/apps/Trebuchet" name="LineageOS/android_packages_apps_Trebuchet" />
 </manifest>

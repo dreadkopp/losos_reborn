@@ -103,10 +103,6 @@ ifeq ($(WITH_TWRP),true)
 include vendor/lineage/config/twrp.mk
 endif
 
-# Bootanimation
-PRODUCT_PACKAGES += \
-    bootanimation.zip
-
 # Required Lineage packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
@@ -117,9 +113,9 @@ PRODUCT_PACKAGES += \
 # Optional packages
 PRODUCT_PACKAGES += \
     libemoji \
-#    LiveWallpapersPicker \
     PhotoTable \
-    Terminal
+    Terminal \
+		crDroidSettings
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
@@ -128,15 +124,10 @@ PRODUCT_PACKAGES += \
 
 # Custom Lineage packages
 PRODUCT_PACKAGES += \
-#    AudioFX \
     LineageSettingsProvider \
     LineageSetupWizard \
-    Eleven \
     ExactCalculator \
-    Jelly \
     LockClock \
-#    Trebuchet \
-    Updater \
     WallpaperPicker \
     WeatherProvider
 
@@ -227,13 +218,6 @@ PRODUCT_PACKAGES += \
     procmem \
     procrank
 
-# Conditionally build in su
-ifeq ($(WITH_SU),true)
-PRODUCT_PACKAGES += \
-#    su
-endif
-endif
-
 DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 
 PRODUCT_VERSION_MAJOR = 8
@@ -283,7 +267,7 @@ ifdef LINEAGE_BUILDTYPE
         endif
     endif
 else
-    # If LINEAGE_BUILDTYPE is not defined, set to UNOFFICIAL
+    # If LINEAGE_BUILDTYPE is not defined, set to BETA
     LINEAGE_BUILDTYPE := BETA
     LINEAGE_EXTRAVERSION :=
 endif
