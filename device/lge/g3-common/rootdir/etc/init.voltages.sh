@@ -42,7 +42,7 @@ fi
 if grep -Fxq "powersave" /sdcard/Losos/settings.conf
 then
   MAX_FREQ=1497600
-  GOV="powersave"
+  GOV="ondemand"
 fi
 
 echo 0 > /sys/module/msm_thermal/core_control/enabled

@@ -254,8 +254,11 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 
-#losos tests
+#losos Stuff
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1 \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true
+
+
+LOCAL_CFLAGS += -DCAMCORDER_GRALLOC_SOURCE
