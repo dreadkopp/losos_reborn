@@ -167,22 +167,20 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # Custom off-mode charger
-ifeq ($(WITH_LINEAGE_CHARGER),true)
+
 PRODUCT_PACKAGES += \
     lineage_charger_res_images \
     font_log.png \
     libhealthd.lineage
-endif
+
 
 # ExFAT support
-WITH_EXFAT ?= true
-ifeq ($(WITH_EXFAT),true)
 TARGET_USES_EXFAT := true
 PRODUCT_PACKAGES += \
     mount.exfat \
     fsck.exfat \
     mkfs.exfat
-endif
+
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -217,6 +215,7 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
     procmem \
     procrank
+endif
 
 DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 
