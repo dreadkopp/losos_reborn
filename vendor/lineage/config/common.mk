@@ -117,7 +117,7 @@ PRODUCT_PACKAGES += \
 # Optional packages
 PRODUCT_PACKAGES += \
     libemoji \
-    LiveWallpapersPicker \
+#    LiveWallpapersPicker \
     PhotoTable \
     Terminal
 
