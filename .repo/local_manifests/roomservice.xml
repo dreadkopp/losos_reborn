@@ -7,7 +7,7 @@
   <project name="crdroid-devices/android_device_lge_d852" path="device/lge/d852" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_lge_f400" path="device/lge/f400" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_lge_ls990" path="device/lge/ls990" remote="github" revision="8.1" />
-  <project name="crdroid-devices/android_device_lge_g3-common" path="device/lge/g3-common" remote="github" revision="8.1" />
+  <project name="dreadkopp/oreo-g3-common" path="device/lge/g3-common" remote="github" revision="master" />
   <project name="crdroid-devices/android_device_qcom_common" path="device/qcom/common" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_kernel_lge_g3" path="kernel/lge/g3" remote="github" revision="8.1" />
   <project name="crdroid-devices/proprietary_vendor_lge" path="vendor/lge" remote="github" revision="8.1" />
@@ -49,6 +49,7 @@ remote="aosp" />
   <project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" remote="github" />
   <project name="xiaomi-note-dev/android_device_xiaomi_virgo-old" path="only-for-libshim" remote="github" revision="lineage-15.1" />
   <remove-project name="crdroidandroid/android_frameworks_av" path="frameworks/av" />
-  <project name="LineageOS/android_frameworks_av" path="frameworks/av" remote="github" revision="staging/lineage-15.1" />
-</manifest>
+<!--  <project name="LineageOS/android_frameworks_av" path="frameworks/av" remote="github" revision="staging/lineage-15.1" /> -->
+  <project name="dreadkopp/oreo-frameworks-av" path="frameworks/av" remote="github" revision="master" />
 
+</manifest>
