@@ -54,5 +54,5 @@
   <project path="packages/apps/Settings" name="crdroidandroid/android_packages_apps_Settings" remote="github" revision="8.1" />
   <project path="external/DUtils" name="DirtyUnicorns/android_external_DUtils" remote="github" revision="o8x" />
   <remove-project path="frameworks/base" name="LineageOS/android_frameworks_base" />
-  <project path="frameworks/base" name="aosp-mirror/platform_frameworks_base" remote="github" revision="oreo-release">
+  <project path="frameworks/base" name="aosp-mirror/platform_frameworks_base" remote="github" revision="oreo-release" />
 </manifest>
