@@ -50,4 +50,9 @@
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <project path="packages/apps/crDroidSettings" name="crdroidandroid/android_packages_apps_crDroidSettings" remote="github" revision="8.1" />
   <remove-project path="packages/apps/Trebuchet" name="LineageOS/android_packages_apps_Trebuchet" />
+  <remove-project path="package/apps/Settings" name="LineageOS/android_packages_apps_Settings" />
+  <project path="packages/apps/Settings" name="crdroidandroid/android_packages_apps_Settings" remote="github" revision="8.1" />
+  <project path="external/DUtils" name="DirtyUnicorns/android_external_DUtils" remote="github" revision="o8x" />
+  <remove-project path="frameworks/base" name="LineageOS/android_frameworks_base" />
+  <project path="frameworks/base" name="aosp-mirror/platform_frameworks_base" remote="github" revision="oreo-release">
 </manifest>
