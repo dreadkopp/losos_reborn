@@ -69,5 +69,22 @@
  <project name="LiquidRemix/android_packages_services_Telephony" path="packages/services/Telephony" remote="github" revision="oc-mr1" />
  <remove-project path="packages/apps/PhoneCommon" name="LineageOS/android_packages_apps_PhoneCommon" groups="pdk-cw-fs,pdk-fs" />
  <project name="LiquidRemix/android_packages_apps_PhoneCommon" path="packages/apps/PhoneCommon" remote="github" revision="oc-mr1" />
-
+ <!-- remove LineageStuff that breaks things with LR mixins -->
+ <remove-project name="LineageOS/android_packages_providers_WeatherProvider" />
+ <remove-project name="LineageOS/android_packages_apps_Snap" />
+ <remove-project name="LineageOS/android_packages_apps_Profiles" />
+ <remove-project name="LineageOS/android_packages_apps_LockClock" />
+ <remove-project name="LineageOS/android_packages_apps_LineageParts" />
+ <remove-project name="LineageOS/android_packages_apps_YahooWeatherProvider" />
+ <remove-project name="LineageOS/android_packages_apps_WundergroundWeatherProvider" />
+ <remove-project name="LineageOS/android_packages_apps_OpenWeatherMapProvider" />
+ <remove-project name="LineageOS/android_hardware_lineage_lineagehw" />
+ <remove-project name="LineageOS/android_hardware_lineage_livedisplay" />
+ <remove-project name="LineageOS/android_hardware_lineage_interfaces" />
+ <!-- replace vendor/lineage and lineage-sdk with modified version -->
+ <remove-project name="LineageOS/android_vendor_lineage" />
+ <remove-project name="LineageOS/android_prebuilts_lineage-sdk" />
+ <project name="dreadkopp/oreo-lineage-sdk" path="lineage-sdk" remote="github" revision="master" />
+ <project name="dreadkopp/oreo-lineage-vendor" path="vendor/lineage" remote="github" revision="master" />
+ 
 </manifest>
