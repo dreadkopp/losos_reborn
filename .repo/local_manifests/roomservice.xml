@@ -48,11 +48,26 @@
   <project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" remote="github" />
   <remove-project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
-  <project path="packages/apps/crDroidSettings" name="crdroidandroid/android_packages_apps_crDroidSettings" remote="github" revision="8.1" />
   <remove-project path="packages/apps/Trebuchet" name="LineageOS/android_packages_apps_Trebuchet" />
-  <remove-project path="package/apps/Settings" name="LineageOS/android_packages_apps_Settings" />
-  <project path="packages/apps/Settings" name="crdroidandroid/android_packages_apps_Settings" remote="github" revision="8.1" />
-  <project path="external/DUtils" name="DirtyUnicorns/android_external_DUtils" remote="github" revision="o8x" />
-  <remove-project path="frameworks/base" name="LineageOS/android_frameworks_base" />
-  <project path="frameworks/base" name="aosp-mirror/platform_frameworks_base" remote="github" revision="oreo-release" />
+<!--Liquid Remix mixin -->
+<remove-project path="packages/apps/Settings" name="LineageOS/android_packages_apps_Settings" groups="pdk-fs" />
+ <project name="LiquidRemix/android_packages_apps_Settings" path="packages/apps/Settings" remote="github" revision="oc-mr1" />
+ <project name="LiquidRemix/android_packages_apps_LiquidLounge" path="packages/apps/LiquidLounge" remote="github" revision="oc-mr1" />
+ <project name="LiquidRemix/android_external_DUtils" path="external/DUtils" remote="github" revision="oc-mr1" />
+ <remove-project path="frameworks/base" name="LineageOS/android_frameworks_base" groups="pdk-cw-fs,pdk-fs" />
+ <project name="LiquidRemix/android_frameworks_base" path="frameworks/base" remote="github" revision="oc-mr1" />
+ <remove-project path="frameworks/native" name="LineageOS/android_frameworks_native" groups="pdk-cw-fs,pdk-fs" />
+ <project name="LiquidRemix/android_frameworks_native" path="frameworks/native" remote="github" revision="oc-mr1" />
+ <project name="LiquidRemix/android_packages_apps_DUI" path="packages/apps/DUI" remote="github" revision="oc-mr1" />
+ <remove-project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="aosp" />
+ <project name="LiquidRemix/android_frameworks_opt_net_ims" path="platform/frameworks/opt/net/ims" remote="github" revision="oc-mr1" />
+ <remove-project path="frameworks/opt/telephony" name="LineageOS/android_frameworks_opt_telephony" groups="pdk" />
+ <project name="LiquidRemix/android_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="github" revision="oc-mr1" />
+ <remove-project path="packages/services/Telecomm" name="LineageOS/android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" />
+ <project name="LiquidRemix/android_packages_services_Telecomm" path="packages/services/Telecomm" remote="github" revision="oc-mr1" />
+ <remove-project path="packages/services/Telephony" name="LineageOS/android_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" />
+ <project name="LiquidRemix/android_packages_services_Telephony" path="packages/services/Telephony" remote="github" revision="oc-mr1" />
+ <remove-project path="packages/apps/PhoneCommon" name="LineageOS/android_packages_apps_PhoneCommon" groups="pdk-cw-fs,pdk-fs" />
+ <project name="LiquidRemix/android_packages_apps_PhoneCommon" path="packages/apps/PhoneCommon" remote="github" revision="oc-mr1" />
+
 </manifest>
