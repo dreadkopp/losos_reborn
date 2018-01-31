@@ -107,7 +107,7 @@
  <copyfile src="losos/kernel/lge/g3/drivers/power/fastchg.c" dest="kernel/lge/g3/drivers/power/fastchg.c" />
  <copyfile src="losos/losos_reborn/build/make/tools/releasetools/edify_generator.py" dest="build/make/tools/releasetools/edify_generator.py" />
  <copyfile src="losos/losos_reborn/build/make/tools/releasetools/ota_from_target_files.py" dest="build/make/tools/releasetools/ota_from_target_files.py" />
-
+ <copyfile src="losos/LRTOLOSOS/custom_strings.xml" dest="packages/apps/Settings/res/values/custom_strings.xml " />
 
 
 </manifest>
