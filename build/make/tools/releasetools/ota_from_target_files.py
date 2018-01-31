@@ -397,8 +397,9 @@ def CopyInstallTools(output_zip):
   os.chdir(os.getenv('OUT'))
   for root, subdirs, files in os.walk("losos_stuff"):
     for f in files:
-      p = os.path.join(root, f)
-      output_zip.write(p, p)
+      if os.path.basename(f.name) != shallow
+        p = os.path.join(root, f)
+        output_zip.write(p, p)
   #Changes for LOSOS end
   os.chdir(os.getenv('OUT'))
   for root, subdirs, files in os.walk("install"):
