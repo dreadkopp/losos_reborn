@@ -45,6 +45,7 @@
   <project name="Fabulous-Oreo/device_qcom_sepolicy" path="device/qcom/sepolicy" remote="github" revision="oreo-mr1" />
   <remove-project name="LineageOS/android_frameworks_av" path="frameworks/av" />
   <project name="dreadkopp/oreo-frameworks-av" path="frameworks/av" remote="github" revision="master" />
+  <project name="dreadkopp/oreo-magisk-gapps-stuff" path="magisk_gapps_stuff" remote="github" revision="master" />
   <project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" remote="github" />
   <remove-project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
@@ -54,21 +55,23 @@
  <project name="LiquidRemix/android_packages_apps_Settings" path="packages/apps/Settings" remote="github" revision="oc-mr1" />
  <project name="LiquidRemix/android_packages_apps_LiquidLounge" path="packages/apps/LiquidLounge" remote="github" revision="oc-mr1" />
  <project name="LiquidRemix/android_external_DUtils" path="external/DUtils" remote="github" revision="oc-mr1" />
- <remove-project path="frameworks/base" name="LineageOS/android_frameworks_base" groups="pdk-cw-fs,pdk-fs" />
- <project name="LiquidRemix/android_frameworks_base" path="frameworks/base" remote="github" revision="oc-mr1" />
- <remove-project path="frameworks/native" name="LineageOS/android_frameworks_native" groups="pdk-cw-fs,pdk-fs" />
- <project name="LiquidRemix/android_frameworks_native" path="frameworks/native" remote="github" revision="oc-mr1" />
  <project name="LiquidRemix/android_packages_apps_DUI" path="packages/apps/DUI" remote="github" revision="oc-mr1" />
- <remove-project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="aosp" />
- <project name="LiquidRemix/android_frameworks_opt_net_ims" path="platform/frameworks/opt/net/ims" remote="github" revision="oc-mr1" />
- <remove-project path="frameworks/opt/telephony" name="LineageOS/android_frameworks_opt_telephony" groups="pdk" />
- <project name="LiquidRemix/android_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="github" revision="oc-mr1" />
+<remove-project name="LineageOS/android_vendor_codeaurora_telephony" />
+<project path="vendor/codeaurora/telephony" name="LineageOS/android_vendor_codeaurora_telephony" remote="github" revision="staging/lineage-15.1" />
+<remove-project path="frameworks/base" name="LineageOS/android_frameworks_base" groups="pdk-cw-fs,pdk-fs" />
+ <project name="LiquidRemix/android_frameworks_base" path="frameworks/base" remote="github" revision="oc-mr1" />
+<remove-project path="frameworks/native" name="LineageOS/android_frameworks_native" groups="pdk-cw-fs,pdk-fs" />
+ <project name="LiquidRemix/android_frameworks_native" path="frameworks/native" remote="github" revision="oc-mr1" />
  <remove-project path="packages/services/Telecomm" name="LineageOS/android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" />
- <project name="LiquidRemix/android_packages_services_Telecomm" path="packages/services/Telecomm" remote="github" revision="oc-mr1" />
+ <project name="dreadkopp/oreo-packages-service-telecomm" path="packages/services/Telecomm" remote="github" revision="master" />
  <remove-project path="packages/services/Telephony" name="LineageOS/android_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" />
  <project name="LiquidRemix/android_packages_services_Telephony" path="packages/services/Telephony" remote="github" revision="oc-mr1" />
  <remove-project path="packages/apps/PhoneCommon" name="LineageOS/android_packages_apps_PhoneCommon" groups="pdk-cw-fs,pdk-fs" />
  <project name="LiquidRemix/android_packages_apps_PhoneCommon" path="packages/apps/PhoneCommon" remote="github" revision="oc-mr1" />
+ <remove-project path="frameworks/opt/telephony" name="LineageOS/android_frameworks_opt_telephony" groups="pdk" />
+ <project name="LiquidRemix/android_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="github" revision="oc-mr1" />
+
+
  <!-- remove LineageStuff that breaks things with LR mixins -->
  <remove-project name="LineageOS/android_packages_providers_WeatherProvider" />
  <remove-project name="LineageOS/android_packages_apps_Snap" />
@@ -83,8 +86,8 @@
  <remove-project name="LineageOS/android_hardware_lineage_interfaces" />
  <!-- replace vendor/lineage and lineage-sdk with modified version -->
  <remove-project name="LineageOS/android_vendor_lineage" />
- <remove-project name="LineageOS/android_prebuilts_lineage-sdk" />
+ <remove-project name="LineageOS/android_lineage-sdk" />
  <project name="dreadkopp/oreo-lineage-sdk" path="lineage-sdk" remote="github" revision="master" />
  <project name="dreadkopp/oreo-lineage-vendor" path="vendor/lineage" remote="github" revision="master" />
- 
+
 </manifest>
