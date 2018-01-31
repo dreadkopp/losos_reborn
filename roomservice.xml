@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <!-- devices -->
   <project name="crdroid-devices/android_device_lge_d855" path="device/lge/d855" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_lge_vs985" path="device/lge/vs985" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_device_lge_d850" path="device/lge/d850" remote="github" revision="8.1" />
@@ -11,7 +12,8 @@
   <project name="crdroid-devices/android_device_qcom_common" path="device/qcom/common" remote="github" revision="8.1" />
   <project name="crdroid-devices/android_kernel_lge_g3" path="kernel/lge/g3" remote="github" revision="8.1" />
   <project name="crdroid-devices/proprietary_vendor_lge" path="vendor/lge" remote="github" revision="8.1" />
-  <project name="dreadkopp/losos_reborn" path="losos" remote="github" revision="master" />
+
+  <!-- get some air -->
   <remove-project groups="pdk" name="device/generic/arm64" path="device/generic/arm64" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/armv7-a-neon" path="device/generic/armv7-a-neon" remote="aosp" />
   <remove-project groups="pdk" name="device/generic/car" path="device/generic/car" remote="aosp" />
@@ -41,6 +43,13 @@
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/Stream" path="packages/apps/Car/Stream" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/SystemUpdater" path="packages/apps/Car/SystemUpdater" remote="aosp" />
   <remove-project groups="pdk-fs" name="platform/packages/apps/Car/UserManagement" path="packages/apps/Car/UserManagement" remote="aosp" />
+  <remove-project name="platform/packages/experimental" />
+  <remove-project name="LineageOS/android_packages_apps_Eleven" />
+  <remove-project name="LineageOS/android_packages_apps_Jelly" />
+  <remove-project name="LineageOS/android_packages_inputmethods_LatinIME" />
+  <remove-project name="LineageOS/android_packages_apps_DeskClock" />
+
+
   <remove-project name="LineageOS/android_device_qcom_sepolicy" path="device/qcom/sepolicy" />
   <project name="Fabulous-Oreo/device_qcom_sepolicy" path="device/qcom/sepolicy" remote="github" revision="oreo-mr1" />
   <remove-project name="LineageOS/android_frameworks_av" path="frameworks/av" />
@@ -50,17 +59,19 @@
   <remove-project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <remove-project path="packages/apps/Trebuchet" name="LineageOS/android_packages_apps_Trebuchet" />
-<!--Liquid Remix mixin -->
-<remove-project path="packages/apps/Settings" name="LineageOS/android_packages_apps_Settings" groups="pdk-fs" />
+
+
+ <!--Liquid Remix mixin -->
+ <remove-project path="packages/apps/Settings" name="LineageOS/android_packages_apps_Settings" groups="pdk-fs" />
  <project name="LiquidRemix/android_packages_apps_Settings" path="packages/apps/Settings" remote="github" revision="oc-mr1" />
  <project name="LiquidRemix/android_packages_apps_LiquidLounge" path="packages/apps/LiquidLounge" remote="github" revision="oc-mr1" />
  <project name="LiquidRemix/android_external_DUtils" path="external/DUtils" remote="github" revision="oc-mr1" />
  <project name="LiquidRemix/android_packages_apps_DUI" path="packages/apps/DUI" remote="github" revision="oc-mr1" />
-<remove-project name="LineageOS/android_vendor_codeaurora_telephony" />
-<project path="vendor/codeaurora/telephony" name="LineageOS/android_vendor_codeaurora_telephony" remote="github" revision="staging/lineage-15.1" />
-<remove-project path="frameworks/base" name="LineageOS/android_frameworks_base" groups="pdk-cw-fs,pdk-fs" />
+ <remove-project name="LineageOS/android_vendor_codeaurora_telephony" />
+ <project path="vendor/codeaurora/telephony" name="LineageOS/android_vendor_codeaurora_telephony" remote="github" revision="staging/lineage-15.1" />
+ <remove-project path="frameworks/base" name="LineageOS/android_frameworks_base" groups="pdk-cw-fs,pdk-fs" />
  <project name="LiquidRemix/android_frameworks_base" path="frameworks/base" remote="github" revision="oc-mr1" />
-<remove-project path="frameworks/native" name="LineageOS/android_frameworks_native" groups="pdk-cw-fs,pdk-fs" />
+ <remove-project path="frameworks/native" name="LineageOS/android_frameworks_native" groups="pdk-cw-fs,pdk-fs" />
  <project name="LiquidRemix/android_frameworks_native" path="frameworks/native" remote="github" revision="oc-mr1" />
  <remove-project path="packages/services/Telecomm" name="LineageOS/android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" />
  <project name="dreadkopp/oreo-packages-service-telecomm" path="packages/services/Telecomm" remote="github" revision="master" />
@@ -74,20 +85,29 @@
 
  <!-- remove LineageStuff that breaks things with LR mixins -->
  <remove-project name="LineageOS/android_packages_providers_WeatherProvider" />
- <remove-project name="LineageOS/android_packages_apps_Snap" />
  <remove-project name="LineageOS/android_packages_apps_Profiles" />
  <remove-project name="LineageOS/android_packages_apps_LockClock" />
  <remove-project name="LineageOS/android_packages_apps_LineageParts" />
- <remove-project name="LineageOS/android_packages_apps_YahooWeatherProvider" />
  <remove-project name="LineageOS/android_packages_apps_WundergroundWeatherProvider" />
  <remove-project name="LineageOS/android_packages_apps_OpenWeatherMapProvider" />
  <remove-project name="LineageOS/android_hardware_lineage_lineagehw" />
  <remove-project name="LineageOS/android_hardware_lineage_livedisplay" />
  <remove-project name="LineageOS/android_hardware_lineage_interfaces" />
+ <remove-project name="LineageOS/android_packages_apps_Camera2" />
+ <remove-project name="LineageOS/android_packages_apps_Email" />
+
  <!-- replace vendor/lineage and lineage-sdk with modified version -->
  <remove-project name="LineageOS/android_vendor_lineage" />
  <remove-project name="LineageOS/android_lineage-sdk" />
  <project name="dreadkopp/oreo-lineage-sdk" path="lineage-sdk" remote="github" revision="master" />
  <project name="dreadkopp/oreo-lineage-vendor" path="vendor/lineage" remote="github" revision="master" />
+
+ <!-- patch over original sources -->
+ <project name="dreadkopp/losos_reborn" path="losos" remote="github" revision="master" />
+ <copyfile src="losos/kernel/lge/g3/drivers/power/fastchg.c" dest="kernel/lge/g3/drivers/power/fastchg.c" />
+ <copyfile src="losos/losos_reborn/build/make/tools/releasetools/edify_generator.py" dest="build/make/tools/releasetools/edify_generator.py" />
+ <copyfile src="losos/losos_reborn/build/make/tools/releasetools/ota_from_target_files.py" dest="build/make/tools/releasetools/ota_from_target_files.py" />
+
+
 
 </manifest>
