@@ -62,4 +62,7 @@ PRODUCT_PACKAGES += \
 	DarkTheme \
 	OmniJaws \
 	OmniStyle \
-	Snap
+	OpenCamera \
+	CameraRoll \
+	Camera \
+	QKSMS
